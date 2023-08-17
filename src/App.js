@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CardList from "./CardList";
 import { robots } from "./robot";
 import SearchBox from "./SearchBox";
+import './App.css';
 
 const App = () => {
 
@@ -20,7 +21,7 @@ const App = () => {
 
     return (
         <div className="tc">
-            <h1>RoboFriends</h1>
+            <h1 className="f1">RoboFriends</h1>
             <SearchBox handleFilterRobot={handleFilterRobot}/>
             <CardList list={robotList}/>
         </div>
