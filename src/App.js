@@ -12,7 +12,7 @@ const App = () => {
         setRobotList(robots);
     }, []);
 
-    const filterRobot = (name) => {
+    const handleFilterRobot = (name) => {
 
         let fileteredRobot = robots.filter((item) => item.name.includes(name));
         setRobotList(fileteredRobot);
@@ -21,7 +21,7 @@ const App = () => {
     return (
         <div className="tc">
             <h1>RoboFriends</h1>
-            <SearchBox filterRobot={filterRobot}/>
+            <SearchBox handleFilterRobot={handleFilterRobot}/>
             <CardList list={robotList}/>
         </div>
         
