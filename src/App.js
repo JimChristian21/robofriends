@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CardList from "./CardList";
-
+import Scroll from "./Scroll";
 import SearchBox from "./SearchBox";
 import './App.css';
 
@@ -29,7 +29,9 @@ const App = ({ list }) => {
         <div className="tc">
             <h1 className="f1">RoboFriends</h1>
             <SearchBox handleFilterRobot={handleFilterRobot}/>
-            <CardList list={robotList}/>
+            <Scroll>
+                <CardList list={robotList}/>
+            </Scroll>
         </div>
         
     );
