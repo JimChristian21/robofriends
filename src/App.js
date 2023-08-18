@@ -7,19 +7,21 @@ import './App.css';
 const App = ({ list }) => {
 
     const [robotList, setRobotList] = useState([]);
-    const [search, setSearch] = useState('');
+    const [allRobotList, setAllRobotList] = useState([]);
 
     useEffect(() => {
 
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
-            .then(users => setRobotList(users));
+            .then(users => {
+                setRobotList(users)
+                setAllRobotList(users);
+            });
     }, []);
 
     const handleFilterRobot = (name) => {
-        setSearch(name);
 
-        let fileteredRobot = robotList.filter((item) => item.name.includes(name));
+        let fileteredRobot = allRobotList.filter((item) => item.name.toLowerCase().includes(name.toLowerCase()));
         setRobotList(fileteredRobot);
     }
 
